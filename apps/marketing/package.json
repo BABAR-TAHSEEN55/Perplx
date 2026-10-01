@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "marketing",
   "version": "0.1.0",
   "type": "module",
   "private": true,
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
+    "motion": "^13.4.6",
     "next": "16.3.4",
     "react": "19.2.8",
     "react-dom": "19.2.8"
