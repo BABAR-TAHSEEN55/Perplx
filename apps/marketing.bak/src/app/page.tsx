@@ -1,10 +1,11 @@
 import Navbar from "../components/sections/navbar";
+import Container from "../components/shared/container";
 
 const Home = () => {
   return (
-    <div>
+    <Container>
       <Navbar />
-    </div>
+    </Container>
   );
 };
 
