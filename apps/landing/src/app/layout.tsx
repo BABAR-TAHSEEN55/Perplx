@@ -3,8 +3,6 @@ import { Geist, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Navbar from "@/components/sections/navbar";
-// import Navbar from "@/components/shared/navbar";
-// import { ThemeProvider } from "@/providers/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
