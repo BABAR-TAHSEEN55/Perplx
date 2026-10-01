@@ -1,22 +1,13 @@
-import { cn } from "cn";
-
-const Container = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+type ContainerProps = {
+  children: ReactNode;
   className?: string;
-}) => {
+};
+export default function Container({ children, className }: ContainerProps) {
   return (
-    <div
-      className={cn(
-        "max-w-6xl md:pr-8 md:pl-8 lg:pr-0 lg:pl-0 p-2 md:p-4 m-auto overflow-hidden md:overflow-visible font-inter",
-        className,
-      )}
-    >
+    <div className={cn("mx-auto max-w-6xl p-4 font-inter", className)}>
       {children}
     </div>
   );
-};
-
-export default Container;
+}
