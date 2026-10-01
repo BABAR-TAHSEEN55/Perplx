@@ -32,3 +32,4 @@ export default function RootLayout({
     </html>
   );
 }
+//TODO: : Download Inter Font and place it here so that we can use it
