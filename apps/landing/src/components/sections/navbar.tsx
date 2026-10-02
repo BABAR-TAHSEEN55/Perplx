@@ -118,10 +118,13 @@ const MobileNav = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-4 mt-auto">
-              <Button className={"font-medium px-4 py-4.5 flex-1"}>
-                Start Building
-              </Button>
+            <div className="flex items-center gap-4  mt-auto">
+              <FlipButtonText text="How it works" className="flex-1" />
+              <FlipButtonText
+                text="Book a Call"
+                variant="orange"
+                className="flex-1"
+              />
             </div>
           </motion.div>
         )}
@@ -132,7 +135,7 @@ const MobileNav = () => {
 
 const DesktopNav = () => {
   return (
-    <Container className="fixed inset-x-4 top-4 z-50 hidden items-center gap-2 rounded-2xl bg-white px-8 py-4 shadow-[0_4px_20px_rgba(39,39,39,0.05)] lg:flex">
+    <Container className="fixed inset-x-4 top-4 z-50 hidden items-center gap-2 rounded-lg bg-white px-8 py-4 shadow-[0_4px_20px_rgba(39,39,39,0.05)] lg:flex">
       <div className="flex flex-1 items-center gap-12">
         <Logo />
         <div className="flex items-center gap-6 text-sm text-gray-700/90 font-light tracking-tight ">
