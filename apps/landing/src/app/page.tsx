@@ -1,3 +1,4 @@
+import About from "@/components/sections/about";
 import Hero from "@/components/sections/hero";
 import LogoCloud from "@/components/sections/logo-cloud";
 import WhyPerplX from "@/components/sections/why";
@@ -21,6 +22,7 @@ const Home = () => {
       <Container>
         <LogoCloud />
         <WhyPerplX />
+        <About />
         <div style={{ height: "100vh" }} />
       </Container>
     </main>

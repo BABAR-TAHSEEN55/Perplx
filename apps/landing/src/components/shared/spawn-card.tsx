@@ -10,7 +10,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        `overflow-hidden rounded-lg bg-white shadow-[0_12px_30px_rgba(0,0,0,0.06)]`,
+        `overflow-hidden rounded-[24px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.06)]`,
         className,
       )}
     >
@@ -36,7 +36,7 @@ export const CardHeader = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  return <div className={cn(`p-2  pb-4`, className)}>{children}</div>;
+  return <div className={cn(`p-6  pb-4`, className)}>{children}</div>;
 };
 export const CardContent = ({
   className,

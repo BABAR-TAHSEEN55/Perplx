@@ -130,3 +130,16 @@ const WhyPerplX = () => {
 };
 
 export default WhyPerplX;
+
+//           <Card className="p-2" key={benefit.title}>
+//             <Pattern className="flex h-62 w items-center justify-center p-6" />
+//
+//             <CardHeader>
+//               <h4 className="font-inter text-3xl font-medium tracking-tight text-neutral-800">
+//                 {benefit.title}
+//               </h4>
+//             </CardHeader>
+//             <CardContent className="px-6 pb-4 text-xs text-neutral-600">
+//               {benefit.description}
+//             </CardContent>
+//           </Card>
