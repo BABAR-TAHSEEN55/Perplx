@@ -7,6 +7,8 @@ import Features from "@/components/sections/features";
 import BackgroundImage from "@/components/shared/background-image";
 import Container from "@/components/shared/container";
 import { ProgressiveBlur } from "@/components/shared/progressive-blur";
+import UseCases from "@/components/sections/use-cases";
+import Testimonials from "@/components/sections/testimonials";
 
 const Home = () => {
   return (
@@ -25,6 +27,8 @@ const Home = () => {
         <WhyPerplX />
         <About />
         <Features />
+        <Testimonials />
+        {/*<UseCases />*/}
         <div style={{ height: "100vh" }} />
       </Container>
     </main>

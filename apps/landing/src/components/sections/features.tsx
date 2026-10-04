@@ -77,8 +77,7 @@ const Features = () => {
 
 export default Features;
 
-const MAX_MOVE = 6; // max px the card shifts
-
+const MAX_MOVE = 8;
 const FeatureCard = ({
   title,
   description,
@@ -89,18 +88,19 @@ const FeatureCard = ({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const springConfig = { stiffness: 300, damping: 15, mass: 0.6 };
+  const springConfig = { stiffness: 300, damping: 20, mass: 0.6 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    // measured on the wrapper, which never moves
     const rect = e.currentTarget.getBoundingClientRect();
-    // -0.5 (left/top edge) to +0.5 (right/bottom edge)
+
     const px = (e.clientX - rect.left) / rect.width - 0.5;
     const py = (e.clientY - rect.top) / rect.height - 0.5;
 
-    x.set(px * 2 * MAX_MOVE);
-    y.set(py * 2 * MAX_MOVE);
+    x.set(-px * 2 * MAX_MOVE);
+    y.set(-py * 2 * MAX_MOVE);
   };
 
   const handleMouseLeave = () => {
@@ -109,31 +109,39 @@ const FeatureCard = ({
   };
 
   return (
-    <motion.div
+    // stationary hit area
+    <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ x: springX, y: springY }}
-      className={cn(
-        "flex min-h-50 flex-col rounded-xl border border-neutral-200/80 bg-white p-5",
-        className,
-      )}
+      className={className}
     >
-      <div aria-hidden="true" className="grid w-10 grid-cols-4 gap-1">
-        <SVGICON
-          aria-hidden="true"
-          className={`size-8 shrink-0 ${iconClassName}`}
-        />
-      </div>
+      {/* moving card */}
+      <motion.div
+        style={{ x: springX, y: springY }}
+        className="flex h-full min-h-50 flex-col rounded-xl border border-neutral-200/80 bg-white p-5"
+      >
+        <div aria-hidden="true" className="grid w-10 grid-cols-4 gap-1">
+          <SVGICON
+            aria-hidden="true"
+            className={`size-8 shrink-0 ${iconClassName}`}
+          />
+        </div>
 
-      <div className="mt-auto pt-18">
-        <h3 className="font-inter text-2xl font-medium tracking-tight text-neutral-900">
-          {title}
-        </h3>
-        <p className="text-md mt-2 max-w-sm leading-snug tracking-tight text-neutral-800">
-          {description}
-        </p>
-        <p className="mt-4 text-sm italic text-neutral-500">{caption}</p>
-      </div>
-    </motion.div>
+        <div className="mt-auto pt-18">
+          <h3 className="font-inter text-2xl font-medium tracking-tight text-neutral-900">
+            {title}
+          </h3>
+          <p
+            className={cn(
+              "text-md mt-2 max-w-sm leading-snug tracking-tight text-neutral-800",
+              className?.includes("col-span-2") && "max-w-none",
+            )}
+          >
+            {description}
+          </p>
+          <p className="mt-4 text-sm italic text-neutral-500">{caption}</p>
+        </div>
+      </motion.div>
+    </div>
   );
 };
