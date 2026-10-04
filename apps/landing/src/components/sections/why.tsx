@@ -34,7 +34,6 @@ const benefits = [
   },
 ];
 
-// width of the hovered column relative to the others (1fr)
 const EXPANDED = 1.5;
 
 const WhyPerplX = () => {
@@ -45,7 +44,7 @@ const WhyPerplX = () => {
     .join(" ");
 
   return (
-    <section className="pt-8">
+    <section className="pt-8 mt-20">
       <div className="flex items-end justify-between">
         <div>
           <SmolText text="@Why Perplx" className="mx-0 text-backy" />

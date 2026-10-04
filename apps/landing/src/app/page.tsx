@@ -2,6 +2,7 @@ import About from "@/components/sections/about";
 import Hero from "@/components/sections/hero";
 import LogoCloud from "@/components/sections/logo-cloud";
 import WhyPerplX from "@/components/sections/why";
+import Features from "@/components/sections/features";
 
 import BackgroundImage from "@/components/shared/background-image";
 import Container from "@/components/shared/container";
@@ -19,10 +20,11 @@ const Home = () => {
           </Container>
         </div>
       </section>
-      <Container>
+      <Container className="max-w-7xl">
         <LogoCloud />
         <WhyPerplX />
         <About />
+        <Features />
         <div style={{ height: "100vh" }} />
       </Container>
     </main>

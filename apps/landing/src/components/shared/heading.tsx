@@ -17,6 +17,7 @@ const Heading = ({
   return (
     <motion.div
       initial={{ opacity: 0, scale: 1.25 }}
+      whileInView={"true"}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="mx-auto w-full max-w-2xl rounded-2xl  p-2 font-inter"
