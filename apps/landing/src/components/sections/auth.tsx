@@ -1,16 +1,14 @@
 "use client";
 
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
-import FlipButtonText from "../shared/flip-button-text";
 import CustomButton from "../shared/custom-button";
 
-const socialButton = "";
+const socialButtonClassName =
+  "flex h-14 w-full items-center justify-center gap-2.5 rounded-xl border border-neutral-200 bg-white text-sm font-inter font-medium tracking-tight text-neutral-900 transition-colors hover:border-neutral-300 hover:bg-neutral-50";
 
-const field = "";
-
-const label = "mb-2 block text-sm font-medium text-neutral-900";
+const fieldClassName =
+  "h-14 w-full rounded-xl bg-neutral-100 px-4 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:bg-white focus:ring-2 focus:ring-backy/30";
 
 const GoogleIcon = () => (
   <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
@@ -51,7 +49,7 @@ const AuthPage = () => {
     <main className="min-h-screen bg-white p-3 text-neutral-900 md:p-6">
       <section className="mx-auto flex min-h-[calc(100vh-1.5rem)] w-full gap-6 lg:min-h-[calc(100vh-3rem)]">
         <div className="flex w-full items-center justify-center px-4 py-12 lg:w-2/5">
-          <div className="w-full max-w-[25rem] ">
+          <div className="w-full max-w-[25rem]">
             <div className="text-center">
               <h1 className="text-3xl font tracking-tight text-neutral-900 font-inter">
                 Sign Up Account
@@ -59,19 +57,11 @@ const AuthPage = () => {
             </div>
 
             <div className="mt-6 grid grid-cols-1 gap-4">
-              <button
-                type="button"
-                className="flex h-14 w-full items-center justify-center gap-2.5 rounded-xl border border-neutral-200 bg-white text-md font-inter tracking-tight font-medium text-neutral-900 transition-colors hover:bg-neutral-50 hover:border-neutral-300"
-              >
+              <button type="button" className={socialButtonClassName}>
                 <GoogleIcon />
                 Sign up with Google
               </button>
-              <button
-                type="button"
-                className={
-                  "flex h-14 w-full items-center justify-center gap-2.5 rounded-xl border border-neutral-200 bg-white text-md font-inter tracking-tight text-neutral-900 transition-colors hover:bg-neutral-50 hover:border-neutral-300"
-                }
-              >
+              <button type="button" className={socialButtonClassName}>
                 <GithubIcon />
                 Sign up with Github
               </button>
@@ -86,9 +76,7 @@ const AuthPage = () => {
             <form className="space-y-5">
               <div>
                 <input
-                  className={
-                    "h-14 w-full rounded-xl bg-neutral-100 px-4 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:bg-white focus:ring-2 focus:ring-backy/30"
-                  }
+                  className={fieldClassName}
                   id="username"
                   name="username"
                   type="text"
@@ -100,9 +88,7 @@ const AuthPage = () => {
 
               <div>
                 <input
-                  className={
-                    "h-14 w-full rounded-xl bg-neutral-100 px-4 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:bg-white focus:ring-2 focus:ring-backy/30"
-                  }
+                  className={fieldClassName}
                   id="email"
                   name="email"
                   type="email"
@@ -115,7 +101,7 @@ const AuthPage = () => {
               <div>
                 <div className="relative">
                   <input
-                    className={`h-14 w-full rounded-xl bg-neutral-100 px-4 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:bg-white focus:ring-2 focus:ring-backy/30 pr-12`}
+                    className={`${fieldClassName} pr-12`}
                     id="password"
                     name="password"
                     type={showPassword ? "text" : "password"}
@@ -178,14 +164,6 @@ const AuthPage = () => {
             loop
             playsInline
           />
-          {/*<Image
-            src={"/auth.jpg"}
-            alt="Auth page"
-            height={"100"}
-            width={"100"}
-            className="absolute inset-0 h-full w-full object-cover"
-          />*/}
-
           <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-white/5" />
         </div>
       </section>
@@ -194,3 +172,4 @@ const AuthPage = () => {
 };
 
 export default AuthPage;
+//TODO: SVG password animation for see unsee
