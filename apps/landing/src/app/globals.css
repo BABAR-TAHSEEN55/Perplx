@@ -50,6 +50,7 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --color-backy: var(--backy);
+  --color-blacky: var(--blacky);
   --color-orange: var(--backy);
 }
 
@@ -87,6 +88,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --backy: #FFA03B;
+  --blacky: #171717;
 
 }
 

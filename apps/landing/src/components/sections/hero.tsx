@@ -24,7 +24,7 @@ const Hero = () => {
           <span className="inline">without overthinking every word</span>
         </SubHeading>
         <motion.div
-          initial={{ opacity: 0, scale: 1.25 }}
+          initial={false}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex items-center gap-4  mt-auto max-w-2xl mx-auto"
